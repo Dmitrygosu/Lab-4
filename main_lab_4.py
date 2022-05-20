@@ -79,7 +79,7 @@ try:
 
     if submatrix_size % 2 == 1:
         index = 0
-        for i in range(submatrix_size//2+1, submatrix_size, 1):  # Обрабатываем подматрицу E
+        for i in range(submatrix_size//2+1, submatrix_size, 1):  
             for j in range(submatrix_size//2-1, 0-1, -1):
                 proizv *= B[i][j-index]
                 index += 1
@@ -107,7 +107,7 @@ try:
 
     if kol_vo > proizv:
         print("Случай 1")
-        for i in range((submatrix_size // 2)-1):  # Меняем 1 и 3 области симметрично
+        for i in range((submatrix_size // 2)-1): 
             for j in range(1, submatrix_size-1):
                 b1 = j > i
                 b2 = j < submatrix_size - 1 - i
@@ -116,7 +116,7 @@ try:
 
     else:
         print("Случай 2")
-        for j in range(0, matrix_size // 2 + matrix_size % 2 - 1, 1): # Меняем подматрицы Е и С местами несимметрично
+        for j in range(0, matrix_size // 2 + matrix_size % 2 - 1, 1): 
             for i in range(matrix_size // 2):
                 F[i][matrix_size // 2 + matrix_size % 2 + j], F[matrix_size // 2 + matrix_size % 2 + i][matrix_size // 2 + matrix_size % 2 + j] = F[matrix_size // 2 + matrix_size % 2 + i][matrix_size // 2 + matrix_size % 2 + j], F[i][matrix_size // 2 + matrix_size % 2 + j]
     print_matrix(B, "B", time_next - time_prev)
